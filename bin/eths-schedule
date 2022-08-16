@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const fs = require("fs");
+const path = require("path");
+const { buildSchedule } = require("../lib/events");
+const loadCalendar = require("../lib/calendar");
+
+const calendar = loadCalendar(path.join(__dirname, "../data/eths_calendar.json"));
+const validTerms = Object.keys(calendar);
+
+const scheduleFile = process.argv[2];
+const term = process.argv[3];
+if (scheduleFile === undefined || !validTerms.includes(term)) {
+  console.log(`Usage: ${path.basename(process.argv[1])} SCHEDULE_FILE <${validTerms.join("|")}>`);
+  process.exit(1);
+}
+const schedules = JSON.parse(fs.readFileSync(scheduleFile));
+
+process.stdout.write(buildSchedule(calendar[term], schedules[term]));

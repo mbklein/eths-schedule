@@ -1,0 +1,22 @@
+{
+  "name": "eths-ics",
+  "version": "1.0.0",
+  "description": "ETHS Schedule Builder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbklein/eths-ics.git"
+  },
+  "author": "Michael B. Klein",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mbklein/eths-ics/issues"
+  },
+  "homepage": "https://github.com/mbklein/eths-ics#readme",
+  "dependencies": {
+    "date-fns": "^2.29.1",
+    "date-fns-tz": "^1.3.6",
+    "date-time-format-timezone": "^1.0.22",
+    "prettier": "^2.7.1",
+    "uuid": "^8.3.2"
+  }
+}
